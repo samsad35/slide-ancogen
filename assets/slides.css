@@ -508,16 +508,16 @@ td {
 
 .gray-slide {
     background-color: rgb(221, 221, 239);
-    background: linear-gradient(to right, rgb(228, 228, 235), #a7abd5);
+    background: radial-gradient(rgb(255, 255, 255), #d3d3d3);
     color: rgb(0, 0, 0);
-    border: solid 6px #005ea8;
+    border-top: solid 6px #877f7f;
 }
 
 .first-slide {
-    background-color: rgb(221, 221, 239);
-    background: radial-gradient(rgb(245, 229, 223), #d0998d);
+    background-color: rgb(248, 248, 250);
+    background: radial-gradient(rgb(255, 255, 255), #d6dbea);
     color: rgb(0, 0, 0);
-    border-top: solid 6px #005ea8;
+    border: solid 6px #005ea8;
 }
 
 .black-slide  .remark-slide-number {
@@ -585,6 +585,39 @@ div.header-logo img {
     text-align: justify;
 }
 
+.bar-left {
+    color: #1d2326;;
+    background-color: rgba(160, 160, 229, 0.06);
+    border-left: 3px solid #0914de;
+    width: 100%;
+    display: block;
+    padding: 0.4em;
+    margin: auto;
+    text-align: justify;
+}
+
+.bar-left-gray {
+    color: #1d2326;;
+    background-color: rgba(144, 144, 156, 0.125);
+    border-left: 3px solid #3f3f50;
+    width: 100%;
+    display: block;
+    padding: 0.4em;
+    margin: auto;
+    text-align: justify;
+}
+
+.bar-left-red {
+    color: #1d2326;;
+    background-color: rgba(229, 160, 160, 0.06);
+    border-left: 3px solid #e22424;
+    width: 100%;
+    display: block;
+    padding: 0.4em;
+    margin: auto;
+    text-align: justify;
+}
+
 .boite-90 {
     color: #354046;;
     background-color: #0000000d;
@@ -603,6 +636,18 @@ div.header-logo img {
     border: 0px solid #5c5853;
     border-radius: 5px;
     width: 100%;
+    display: block;
+    padding: 0.3em;
+    margin: auto;
+    text-align: justify;
+}
+
+.boite-figure {
+    color: #354046;; 
+    border-style: groove;
+    background-color: rgba(126, 123, 123, 0.05);
+    border: 1px solid #171717;
+    width: 90%;
     display: block;
     padding: 0.3em;
     margin: auto;

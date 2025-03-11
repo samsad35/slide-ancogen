@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.79587104"
-     inkscape:cx="937.33779"
-     inkscape:cy="141.9828"
+     inkscape:zoom="0.56276581"
+     inkscape:cx="931.11556"
+     inkscape:cy="261.2099"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -2596,7 +2596,7 @@
          sodipodi:nodetypes="cc" />
     </g>
     <rect
-       style="opacity:1;fill:#f2f2f2;stroke:#000000;stroke-width:0.289;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.289;stroke-dasharray:none;stroke-opacity:1"
        id="rect160"
        width="10.128266"
        height="56.031998"
@@ -2604,7 +2604,7 @@
        y="-34.134418"
        ry="2.9154861" />
     <rect
-       style="opacity:1;fill:#f2f2f2;stroke:#000000;stroke-width:0.289;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.289;stroke-dasharray:none;stroke-opacity:1"
        id="rect161"
        width="10.134523"
        height="47.661564"
@@ -2688,7 +2688,7 @@
          x="-68.427315"
          y="197.01642">Embedding Layer</tspan></text>
     <rect
-       style="opacity:1;fill:#f2f2f2;stroke:#000000;stroke-width:0.391295;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.391295;stroke-dasharray:none;stroke-opacity:1"
        id="rect227"
        width="134.00859"
        height="113.76218"

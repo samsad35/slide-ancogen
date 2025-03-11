@@ -3,8 +3,8 @@
 
 <svg
    width="410.78851mm"
-   height="140.11139mm"
-   viewBox="0 0 410.78845 140.11143"
+   height="150.97475mm"
+   viewBox="0 0 410.78845 150.97479"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.79587103"
-     inkscape:cx="838.07549"
-     inkscape:cy="371.91956"
+     inkscape:zoom="0.5627658"
+     inkscape:cx="948.88495"
+     inkscape:cy="353.61068"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -1040,17 +1040,6 @@
        x="149.07668"
        y="-39.809441"
        ry="5.9324546" />
-    <text
-       xml:space="preserve"
-       style="font-size:6.07104px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.227663"
-       x="151.48932"
-       y="-41.486835"
-       id="text1"><tspan
-         sodipodi:role="line"
-         id="tspan1"
-         style="stroke-width:0.227663"
-         x="151.48932"
-         y="-41.486835">Masking</tspan></text>
     <rect
        style="opacity:1;fill:#87aade;stroke:#000000;stroke-width:0.379;stroke-dasharray:none;stroke-opacity:1"
        id="rect2"
@@ -5276,7 +5265,7 @@
     </g>
     <g
        id="g223"
-       style="opacity:1;fill:#aaccff;stroke:#000000;stroke-width:1.46192;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:1.46192;stroke-dasharray:4.38576, 4.38576;stroke-dashoffset:0;stroke-opacity:1"
        transform="matrix(0,-0.47882289,-0.47882289,0,401.51194,25.097069)">
       <title
          id="title222">Manual Operation</title>
@@ -5284,7 +5273,7 @@
          id="desc222">An offline process (at &quot;human speed&quot;).</desc>
       <path
          d="m 15,35 h 120 l -30,80 H 45 Z"
-         style="fill:#aaccff;stroke-width:1.46192;stroke-dasharray:none"
+         style="fill:#e6e6e6;fill-opacity:1;stroke-width:1.46192;stroke-dasharray:4.38576, 4.38576;stroke-dashoffset:0"
          id="path222" />
     </g>
     <text
@@ -5397,5 +5386,38 @@
          style="stroke-width:0.197233"
          x="272.49091"
          y="92.721863">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="57.239998"
+       y="101.05699"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math';stroke-width:0.264583"
+         x="57.239998"
+         y="101.05699">Token representation</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="151.26964"
+       y="101.05699"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math';stroke-width:0.264583"
+         x="151.26964"
+         y="101.05699">Masking</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="247.41495"
+       y="101.05699"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math';stroke-width:0.264583"
+         x="247.41495"
+         y="101.05699">Encoder-decoder</tspan></text>
   </g>
 </svg>
