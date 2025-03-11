@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> AnCoGen </title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link href="./assets/katex.min.css" rel="stylesheet">
+    <link href="./assets/slides.css" rel="stylesheet" type="text/css">
+    <link href="./assets/grid.css" rel="stylesheet" type="text/css">
+    <!-- Change equation font color defined in assests/slides.css -->
+    <script type="text/javascript">
+        document.documentElement.style
+            .setProperty('--eq_font_color', '#004c86');
+    </script>
+    <script src="./assets/katex.min.js"></script>
+    <script
+            defer
+            src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
+    ></script>
+    <link
+            href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+            rel="stylesheet"
+    />
+
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        div.scroll-container {
+            background-color: #ffffff;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 5px;
+        }
+
+        div.scroll-container img {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+<textarea id="source">
+
+class: middle, center
+
+<!--- 
+https://katex.org/docs/supported.html#macros
+--->
+$$ \global\def\myza#1{{\color{blue}\mathbf{x}\_{q,~#1}^{(f)}}} $$
+$$ \global\def\xaudio{{\color{red}\mathbf{x}^{(a)}}} $$
+$$ \global\def\xaudioq{{\color{red}\mathbf{x}^{(a)}_q}} $$
+$$ \global\def\xfactor{{\color{blue}\mathbf{x}^{(f)}}} $$
+$$ \global\def\xfactorq{{\color{blue}\mathbf{x}^{(f)}_q}} $$
+
+$$ \global\def\myzarec#1{{\color{blue}\hat{\mathbf{x}}\_{q,~#1}^{(f)}}} $$
+$$ \global\def\xaudioqrec{{\color{red}\hat{\mathbf{x}}^{(a)}_q}} $$
+$$ \global\def\xfactorqrec{{\color{blue}\hat{\mathbf{x}}^{(f)}_q}} $$
+
+.center.boite-90[
+# AnCoGen: <u>An</u>alysis, <u>Co</u>ntrol and <u>Gen</u>eration of Speech with a Masked Autoencoder
+## **Paper ID: 5044**
+]
+.vspace[
+
+
+]
+
+.center[.bold[Samir Sadok$^1$], Simon Leglaive, Laurent Girin, Gaël Richard, Xavier Alameda-Pineda]
+
+.center.bold[IEEE ICASSP 2025]
+
+
+.grid[
+.kol-1-6[
+.vspace[
+
+]
+]
+.kol-2-3[
+
+.credit[$^1$Inria at Univ. Grenoble Alpes, CNRS, LJK, France]
+
+
+]
+.kol-1-6[
+.vspace[
+
+]
+.right.width-65[![](images/logo_IETR.svg)]]
+
+]
+
+---
+class: middle
+
+## Joint work with
+
+.grid[
+
+.kol-1-4[
+.center.width-90.circle[![](images/colab/simon.png)
+<br/>
+Simon Leglaive<sup>.small[1]</sup>]
+]
+
+.kol-1-4[
+.center.width-90.circle[![](images/colab/laurent_girin.jpeg)
+<br/>
+Laurent Girin<sup>.small[2]</sup>]
+]
+
+.kol-1-4[
+.center.width-90.circle[![](images/colab/richard-gael.jpg)
+<br/>
+Gaël Richard<sup>.small[1]</sup>]
+]
+
+.kol-1-4[
+.center.width-90.circle[![](images/colab/xavi-square-light.jpg)
+<br>
+Xavier Alameda-Pineda<sup>.small[3]</sup>]
+]
+
+.kol-1-3[
+  .small.center[<sup>1</sup> CentraleSupélec, IETR (UMR CNRS 6164), France]
+]
+.kol-1-3[
+  .small.center[<sup>2</sup> Univ. Grenoble Alpes, CNRS, Grenoble-INP, GIPSA-lab, France]
+]
+.kol-1-3[
+  .small.center[<sup>3</sup> Inria, Univ. Grenoble Alpes, CNRS, LJK, France]
+]
+
+]
+
+???
+
+
+- This is joint work with several people: Samir Sadok who is a Ph.D. student I am supervising, Laurent Girin, Xavi Alameda-Pineda, and Renaud Séguier.
+- I have to say that it’s principally the work of Samir that I will be presenting today.
+
+
+
+---
+class: center, middle
+
+# Introduction to AnCoGen
+
+---
+## Introduction (1/2)
+
+Today, the most effective methods for manipulating speech signals are based on .bold[deep learning].
+
+.grid.center[
+.kol-1-2[
+.center.width-60[![](images/introduction/intro-icassp-1.svg)]
+.caption[**Neural audio codecs:** e.g., Encodec, soundstream]
+
+]
+
+.kol-1-2[
+.center.width-60[![](images/introduction/intro-icassp-2.svg)]
+.caption[**Polyak model, LPCnet ...**]
+]
+]
+
+
+Existing neural encoder-decoder models achieve .bold[high-quality speech reconstruction] but
+- Significantly *lack controllability* for speech signal manipulation;
+- and robustness to *noise* and *reverberation*.
+
+---
+## Introduction (2/2)
+
+We introduce AnCoGen for .bold[analyzing], .bold[controlling], and .bold[generating] speech signals.
+
+.grid[
+.center.width-60[![](images/introduction/AnCoGen-high-level-2.svg)]
+.caption[Analysis, control, and generation of speech with AnCoGen.]
+]
+
+.left.boite[
+AnCoGen can decompose a speech signal into comprehensive set of speech attributes: representing **linguistic content**, **prosody** (pitch and
+loudness), **speaker identity**, and the **acoustic recording conditions** in terms of noise and reverberation.
+]
+
+???
+- AnCoGen learns a bidirectional mapping between a Mel-spectrogram and the speech attributes, hence leading to a single model for the analysis and the
+resynthesis, as illustrated in Fig. 1.
+
+---
+class: middle, center
+
+# The Proposed Model: AnCoGen
+
+---
+## Speech representations
+AnCoGen utilizes *two speech signal representations*: <br>
+
+.center[
+.kol-1-2[
+.bold[Mel-spectrogram representation (MS)] <br>
+.small[(low-level representation close to the raw signal)]
+
+.center.width-30[![](images/method/representation-mel.svg)]
+
+.small.left[The Mel-spectrograms are computed using the short-time Fourier transform.
+- 64-ms Hann window (1024 samples at 16 kHz) and a 10-ms hop size (160 samples).
+- The number of Mel-bands is set to 128.]
+]
+.kol-1-2[
+.bold[High-level attributes representation ($A\_{1:6}$)] <br>
+.small[(higher-level representation more suitable for controlling and manipulating speech)]
+
+.center.width-30[![](images/method/representation-attr.svg)]
+
+.small.left[
+$A\_1$:  the speech signal **linguistic content** (HuBERT model); <br>
+$A\_2$: The **pitch** contour $f\_0$ (in Hz), using CREPE;<br>
+$A\_3$: The **loudness**, here defined as the root mean square (RMS) signal;<br>
+$A\_4$: The **speaker identity**;<br>
+$A\_5$: The **signal-to-noise** ratio (SNR; in dB);<br>
+$A\_6$: The **clarity index** at 50 ms (C50; in dB);
+
+]
+]
+]
+
+
+---
+## Token representations
+
+.center[
+.kol-1-2[
+.bold[Mel-spectrogram representation (MS)] <br>
+
+.center.width-70[![](images/method/token-mel.svg)]
+
+<hr>
+.bold[High-level attributes representation ($A\_{1:6}$)] <br>
+
+.center.width-70[![](images/method/token-attr.svg)]
+]
+]
+
+.center[
+.kol-1-2[
+ <br>
+.boite-90[
+The Mel-spectrogram discrete tokens are obtained from the discrete latent
+representation of a pre-trained and frozen *vector-quantized variational autoencoder (VQ-VAE)*.
+]
+<br>
+<br>
+
+
+.boite-90[
+The speech attribute discrete tokens result from the *quantization* of the six speech attributes $A\_{1:6}$
+]
+
+]
+]
+
+???
+- Attributes A2 (f0), A3 (loudness), A5 (SNR), and A6 (C50) are 1D
+real-valued sequences that are normalized, resampled (if needed to
+have the same length), and rounded to obtain sequences of discrete
+integer values. Each token ai,t for i ∈ {2, 3, 5, 6} is then obtained
+by grouping Di contiguous discrete values from the corresponding
+sequence.
+- Attributes A1 (HuBERT representation) and A4 (speaker
+identity embedding vector) are quantized using the k-means algorithm,
+as in [23]. The number of clusters is set to K1 = 100 for A1 and to the
+number of speakers in the training dataset for K4.
+---
+## Masking strategy
+Training AnCoGen is achieved by **randomly masking** the input sequences of mel-spectrogram and speech attributes tokens.
+
+
+.kol-2-3[
+.center.width-70[![](images/method/masking.svg)]
+]
+.kol-1-3[
+<br>
+<br>
+
+.boite-90[
+The masking ratio for these two speech representations is drawn randomly according to a **uniform distribution** on the 1-simplex.
+]
+]
+
+???
+.small[
+- if $p \times 100 \%$ of the mel-spectrogram tokens are masked,
+- then $(1 − p) \times 100 \%$ of the speech attributes tokens are masked,
+]
+where $p$ is distributed uniformly between 0 and 1.
+
+---
+## Encoder-decoder architecture
+
+.grid[
+.kol-3-4[
+.center.width-90[![](images/method/encoder-decoder.svg)]
+.caption[Encoder-decoder architecture]
+]
+.kol-1-4[
+.center.width-80[![](images/method/legend.svg)]
+.caption[Legend]
+]
+]
+
+.boite-90[
+- The encoder and decoder of AnCoGen each contain **12 multi-head self-attention** (MHSA) blocks from the Vision Transformer (ViT) .blue.small[(He et al., 2017)].
+- The model (encoder, decoder, codebooks and mask token) is trained by computing the **cross-entropy loss** between the predicted and ground-truth discrete tokens.
+]
+---
+class: middle, center, blue-slide
+
+.center.width-100[![](images/method/overall.svg)]
+.caption[Overall architecture of AnCoGen, to read from left (input) to right (output).]
+
+---
+class: middle
+
+.center[
+# Experiments
+]
+
+---
+class: middle
+## Experimental setup
+.boite[
+*1) For the .bold[analysis-resynthesis] & .bold[robust $f\_0$ estimation]:*
+.small[
+AnCoGen is trained on synthetic **noisy** and **reverberant** speech data.
+
+- LibriSpeech-100 dataset .blue.small[(panayotov et al., 2015)] + the noise signals from the DEMAND dataset .small.blue[(thiemann et al., 2013)];
+- The signal-to-noise ratio (SNR) was varied between 0 and 30 dB;
+- and synthetic reverberation was added.
+]
+]
+
+.small-vspace[
+
+]
+
+.boite[
+*2) For the .bold[analysis-control-resynthesis (speech enhancement)]:*
+.small[
+- .bold[Matched conditions]: AnCoGen are trained and evaluated on the single-speaker version of the **LibriMix dataset**;
+- .bold[Mismatched noise conditions]: we also compute the performance on the LibriSpeech + DEMAND dataset.
+]
+]
+
+.credit[
+Panayotov, et al., (2015, April). Librispeech: an asr corpus based on public domain audio books. In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP). IEEE. <br>
+Thiemann, J., et al.,. (2013, June). The diverse environments multi-channel acoustic noise database (demand): A database of multichannel environmental noise recordings. Meetings on Acoustics. AIP Publishing.
+]
+---
+## Analysis (1/2)
+
+We present *analysis results*, which correspond to the estimation of the speech attributes from a Mel-spectrogram.
+
+.grid[
+.center.kol-2-3[
+.center[
+<audio controls style="height: 20px;" src="images/analyzer/example 1/audio_original.wav"></audio>
+.nvspace[
+]
+<div class="scroll-container">
+  <img src="images/analyzer/example 1/pitch.png" alt="Cinque Terre" width="600" height="400">
+  <img src="images/analyzer/example 1/loudness.png" alt="Forest" width="600" height="400">
+<!--  <img src="images/analyzer/example 1/identity.png" width="600" height="400">-->
+  <img src="images/analyzer/example 1/content.png" width="600" height="400">
+  <img src="images/analyzer/example 1/c50.png" width="600" height="400">
+  <img src="images/analyzer/example 1/snr.png" width="600" height="400">
+</div>
+]
+]
+.kol-1-3[
+.boite-me[
+.center.width-80[![](images/analyzer/analysis.svg)]
+]
+.footnote.center.small[.blue[Blue line] represents the ground-truth attribute; and the .red[red line] represents the prediction of AnCoGen.]
+
+]
+]
+
+
+---
+## Analysis (2/2)
+
+For the robust $f\_0$ estimation experiment, we mixed the clean speech signals of the PTDB-TUG database with cafeteria noise from the DEMAND dataset.
+
+.grid[
+.kol-2-3[
+.center.width-90[![](images/analyzer/pitch_estimation.svg)]
+.caption[
+ $f\_0$ estimation results.
+]
+]
+.kol-1-3[
+.boite-me[
+.center.width-80[![](images/analyzer/analysis.svg)]
+]
+]
+]
+
+.alert[
+ AnCoGen shows very accurate $f\_0$ estimation performance, matching that
+of CREPE on clean data, and maintaining very good accuracy in noisy and reverberant condition.
+]
+
+---
+## Analysis-resynthesis (1/2)
+Using AnCoGen to map a Mel-spectrogram to the corresponding speech attributes *(analysis stage)* and then back to the Mel-spectrogram *(generation stage)*.
+
+.grid[
+.center.kol-2-3[
+
+.boite.grid[
+.center.kol-1-2[
+.center.width-100[![](images/generate/example-1/audio_original.wav.svg)]
+<audio controls style="height: 20px;" src="images/generate/example-1/audio_original.wav"></audio>
+.small.boxed[Original]
+]
+.center.kol-1-2[
+.center.width-95[![](images/generate/example-1/audio_predicted.wav.svg)]
+<audio controls style="height: 20px;" src="images/generate/example-1/audio_predicted.wav"></audio>
+.small.boxed[Reconstruction with AnCoGen]
+]
+]
+
+]
+.kol-1-3[
+.boite-me[
+.center.width-90[![](images/generate/analysis-generation.svg)]
+]
+]
+]
+
+
+
+---
+## Analysis-resynthesis (2/2)
+Using AnCoGen to map a Mel-spectrogram to the corresponding speech attributes *(analysis stage)* and then back to the Mel-spectrogram *(generation stage)*.
+
+.grid[
+.center.kol-2-3[
+
+.boite.grid[
+.center.kol-1-2[
+.center.width-100[![](images/generate/example-2/audio_original.wav.svg)]
+<audio controls style="height: 20px;" src="images/generate/example-2/audio_original.wav"></audio>
+.small.boxed[Original]
+]
+.center.kol-1-2[
+.center.width-95[![](images/generate/example-2/audio_predicted.wav.svg)]
+<audio controls style="height: 20px;" src="images/generate/example-2/audio_predicted.wav"></audio>
+.small.boxed[Reconstruction with AnCoGen]
+]
+]
+
+]
+.kol-1-3[
+.boite-me[
+.center.width-90[![](images/generate/analysis-generation.svg)]
+]
+]
+]
+
+---
+## Speech Enhancement
+
+This section presents analysis, transformation, and synthesis results, where the speech attributes are controlled between the analysis and generation stages in order to perform speech denoising (**by increasing the SNR attribute**).
+.grid[
+.center.kol-2-3[
+.small-nvspace[
+
+]
+.center.width-100[![](images/controler/speech_enhanecement.png)]
+.caption[Speech denoising results (best score in each column is in bold, second best score is underlined).]
+]
+.kol-1-3[
+.boite-me[
+.center.width-90[![](images/analyzer/speech_enhancement.svg)]
+]
+]
+]
+.small-vspace[
+
+]
+
+.alert[
+AnCoGen effectively balances **noise reduction**, **speech quality**, and **intelligibility**.
+
+However, it ranks last in *speaker identity preservation* (as measured by COS).
+]
+
+---
+class: middle
+
+## Speech Enhancement
+
+**From LibrisSpeech dataset + Demand**
+
+.center.boite.grid[
+.kol-1-3[
+.small.boxed[Ground-truth clean speech]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-1/ref.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-2/ref.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-3/ref.wav"></audio>
+]
+.kol-1-3[
+.small.boxed[Noisy speech]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-1/original.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-2/original.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-3/original.wav"></audio>
+]
+.kol-1-3[
+.small.boxed[Estimated clean speech]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-1/rec.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-2/rec.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Demand/example-3/rec.wav"></audio>
+]
+]
+
+
+---
+class: middle, center
+
+# Conclusion
+
+---
+class: middle
+
+## Resume
+
+We introduce, .bold[AnCoGen], a self-supervised method based on masked modeling. This approach embodies $\texttt{analysis-generation-control}$ within a simple unified model.
+
+- This model makes it possible to $\texttt{analyze}$ the speech signal, i.e., extracting pitch, loudness, identity, noise level, and content;
+- $\texttt{Generate}$ audio speech from the factors provided in the analysis step;
+- and provides $\texttt{control}$ by manipulating the extracted factors.
+
+
+---
+class: middle, center
+
+# Supplementary materials
+
+
+---
+class: middle
+## Pitch manipulation
+
+.center.width-100[![](images/controler/pitch-controller/pitch_manipulation.png)]
+
+
+---
+class: middle
+
+## De-reverberation
+**From LibrisSpeech dataset + Demand (De-reverberation)**
+
+.center.boite.grid[
+.kol-1-3[
+.boxed[Original]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-1/ref.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-2/ref.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-3/ref.wav"></audio>
+]
+.kol-1-3[
+.boxed[W/ reverb]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-1/original.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-2/original.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-3/original.wav"></audio>
+]
+.kol-1-3[
+.boxed[Enhanced with AnCoGen]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-1/rec.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-2/rec.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/speech-enhancement/Reverb/example-3/rec.wav"></audio>
+]
+]
+
+
+---
+class: middle
+## Voice conversion
+
+.center.width-100[![](images/controler/controler-conversion.svg)]
+
+---
+class: middle
+## Voice conversion
+
+.center.boite.grid[
+.kol-1-3[
+.small.boxed[Target identity]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_1/2-target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_2/2-target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_3/2-target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_4/2-target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_5/2-target_predicted.wav"></audio>
+]
+.kol-1-3[
+.small.boxed[Source signal]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_1/1-source_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_2/1-source_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_3/1-source_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_4/1-source_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_5/1-source_predicted.wav"></audio>
+]
+.kol-1-3[
+.small.boxed[Voice conversion with AnCoGen]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_1/3-source_to_target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_2/3-source_to_target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_3/3-source_to_target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_4/3-source_to_target_predicted.wav"></audio>
+.small-vspace[
+
+]
+<audio controls style="height: 20px;" src="images/controler/voice-conversion/example_5/3-source_to_target_predicted.wav"></audio>
+]
+]
+
+</textarea>
+
+
+<script src="./assets/remark-latest.min.js"></script>
+<script src="./assets/auto-render.min.js"></script>
+<script src="./assets/katex.min.js"></script>
+<script type="text/javascript">
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var options = {
+        sourceUrl: getParameterByName("p"),
+        highlightLanguage: "python",
+        // highlightStyle: "tomorrow",
+        // highlightStyle: "default",
+        highlightStyle: "github",
+        // highlightStyle: "googlecode",
+        // highlightStyle: "zenburn",
+        highlightSpans: true,
+        highlightLines: true,
+        ratio: "16:9"
+    };
+
+    var renderMath = function () {
+        renderMathInElement(document.body, {
+            delimiters: [ // mind the order of delimiters(!?)
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+            ]
+        });
+    }
+    var slideshow = remark.create(options, renderMath);
+
+</script>
+</body>
+</html>
