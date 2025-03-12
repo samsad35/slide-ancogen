@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="308.7887mm"
+   height="42.229733mm"
+   viewBox="0 0 308.7887 42.229734"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="legend_2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.35723205"
+     inkscape:cx="335.91611"
+     inkscape:cy="159.56015"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-55.053667,-188.35791)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.392697;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:none"
+       id="rect1"
+       height="308.396"
+       x="-230.3913"
+       y="55.250015"
+       rx="0.63697356"
+       ry="6.0525155"
+       width="41.837036"
+       transform="rotate(-90)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text3"
+       x="82.463623"
+       y="216.91504"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="82.463623"
+         y="216.91504"
+         id="tspan1"
+         style="stroke-width:2.84776">Visible continuous token</tspan><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="82.463623"
+         y="223.99063"
+         style="stroke-width:2.84776" /><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="82.463623"
+         y="230.97688"
+         style="stroke-width:2.84776" /></text>
+    <g
+       id="g5"
+       transform="matrix(2.8765986,0,0,2.8765986,-62.145984,150.84029)"
+       style="fill:#dae8fc;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g4"
+         transform="translate(34.734233,3.0372162)"
+         style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+        <g
+           id="g3"
+           style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+           transform="translate(0,-1.3661224)">
+          <path
+             d="m 6.813,12.891 h 2.723 v 2.453 H 6.813 Z"
+             style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-width:0.16355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path3" />
+        </g>
+      </g>
+    </g>
+    <path
+       d="m 69.131528,192.72959 h 7.84448 v 7.05629 h -7.84448 z"
+       style="fill:#ffaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#ff5555;stroke-width:0.470466;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       id="path5"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g12"
+       transform="matrix(2.8765986,0,0,2.8765986,-62.131651,163.35072)"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g7"
+         transform="translate(34.734233,1.6710938)"
+         style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+        <g
+           id="g6"
+           style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+          <path
+             d="m 6.813,12.891 h 2.723 v 2.453 H 6.813 Z"
+             style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-width:0.16355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path6" />
+        </g>
+      </g>
+      <path
+         d="m 41.543233,15.816094 0.679,1.171"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path7" />
+      <path
+         d="m 41.648233,15.081094 1.125,1.965"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path8" />
+      <path
+         d="m 41.988233,14.632094 1.324,2.398"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path9" />
+      <path
+         d="m 42.550233,14.534094 1.325,2.399"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path10" />
+      <path
+         d="m 43.132233,14.534094 1.055,1.867"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11" />
+      <path
+         d="m 43.742233,14.534094 0.527,0.973"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path12" />
+    </g>
+    <g
+       id="g19"
+       transform="matrix(2.8765986,0,0,2.8765986,-50.281992,163.35072)"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g14"
+         transform="translate(34.734233,1.6710938)"
+         style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+        <g
+           id="g13"
+           style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+          <path
+             d="m 6.813,12.891 h 2.723 v 2.453 H 6.813 Z"
+             style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-width:0.16355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path13" />
+        </g>
+      </g>
+      <path
+         d="m 41.543233,15.816094 0.679,1.171"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path14" />
+      <path
+         d="m 41.648233,15.081094 1.125,1.965"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path15" />
+      <path
+         d="m 41.988233,14.632094 1.324,2.398"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path16" />
+      <path
+         d="m 42.550233,14.534094 1.325,2.399"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path17" />
+      <path
+         d="m 43.132233,14.534094 1.055,1.867"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path18" />
+      <path
+         d="m 43.742233,14.534094 0.527,0.973"
+         style="fill:none;stroke:#666666;stroke-width:0.184252;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path19" />
+    </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.392979;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:none"
+       id="rect19"
+       height="19.90295"
+       x="248.19005"
+       y="196.55045"
+       rx="1.9657173"
+       ry="1.6586603"
+       width="9.882329"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.392979;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2.5;stroke-dasharray:0.392979, 0.785955;stroke-dashoffset:0"
+       id="rect20"
+       height="19.90295"
+       x="301.57892"
+       y="197.63672"
+       rx="1.9657173"
+       ry="1.6586603"
+       width="9.882329"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g22"
+       transform="matrix(2.8765986,0,0,2.8765986,31.796154,174.96177)"
+       style="fill:#dae8fc;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g21"
+         transform="translate(34.734233,1.6710938)"
+         style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+        <g
+           id="g20"
+           style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+          <path
+             d="m 6.813,12.891 h 2.723 v 2.453 H 6.813 Z"
+             style="fill:#dae8fc;fill-opacity:1;stroke:#6c8ebf;stroke-width:0.16355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+             id="path20" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g29"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       transform="matrix(2.619857,0,0,2.619857,-141.62703,178.00743)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse22"
+         cx="112.35004"
+         cy="15.594096"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse23"
+         cx="113.29795"
+         cy="15.376106"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse24"
+         cx="112.87533"
+         cy="16.307405"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse25"
+         cx="113.70083"
+         cy="16.124285"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse26"
+         cx="114.26555"
+         cy="15.590853"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse27"
+         cx="112.36626"
+         cy="16.877523"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse28"
+         cx="113.3443"
+         cy="17.006054"
+         rx="0.16251588"
+         ry="0.1676757" />
+      <ellipse
+         style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse29"
+         cx="114.23657"
+         cy="16.889345"
+         rx="0.16251588"
+         ry="0.1676757" />
+    </g>
+    <g
+       id="g40"
+       transform="matrix(2.619857,0,0,2.619857,7.151534,45.913956)"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g32"
+         transform="matrix(1.0979983,0,0,1.0979983,0.421116,81.011118)"
+         style="stroke-linecap:butt;stroke-linejoin:round">
+        <g
+           id="g31"
+           transform="translate(47.007089,-25.882251)"
+           style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+          <g
+             id="g30"
+             transform="translate(0,-1.3661224)"
+             style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1">
+            <path
+               d="m 6.813,12.891 h 2.723 v 2.453 H 6.813 Z"
+               style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-width:0.16355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+               id="path29" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="g39"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         transform="translate(-52.309861,50.508383)">
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse32"
+           cx="112.35004"
+           cy="15.594096"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse33"
+           cx="113.29795"
+           cy="15.376106"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse34"
+           cx="112.87533"
+           cy="16.307405"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse35"
+           cx="113.70083"
+           cy="16.124285"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse36"
+           cx="114.26555"
+           cy="15.590853"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse37"
+           cx="112.36626"
+           cy="16.877523"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse38"
+           cx="113.3443"
+           cy="17.006054"
+           rx="0.16251588"
+           ry="0.1676757" />
+        <ellipse
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:0.0215304;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse39"
+           cx="114.23657"
+           cy="16.889345"
+           rx="0.16251588"
+           ry="0.1676757" />
+      </g>
+    </g>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text42"
+       x="82.545212"
+       y="194.11224"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="82.545212"
+         y="194.11224"
+         id="tspan40"
+         style="stroke-width:2.84776">Visible discrete token</tspan><tspan
+         sodipodi:role="line"
+         id="tspan41"
+         x="82.545212"
+         y="201.18784"
+         style="stroke-width:2.84776" /><tspan
+         sodipodi:role="line"
+         id="tspan42"
+         x="82.545212"
+         y="208.17409"
+         style="stroke-width:2.84776" /></text>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text45"
+       x="82.155273"
+       y="206.14603"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="82.155273"
+         y="206.14603"
+         id="tspan43"
+         style="stroke-width:2.84776">Masked discrete token</tspan><tspan
+         sodipodi:role="line"
+         id="tspan44"
+         x="82.155273"
+         y="213.22162"
+         style="stroke-width:2.84776" /><tspan
+         sodipodi:role="line"
+         id="tspan45"
+         x="82.155273"
+         y="220.20787"
+         style="stroke-width:2.84776" /></text>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text46"
+       x="177.9547"
+       y="205.36925"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         x="177.9547 182.61035 185.71852 188.51305 191.30757 192.86035 194.41315 197.52155 200.31596 203.42436"
+         y="205.36925"
+         sodipodi:role="line"
+         id="tspan46"
+         style="stroke-width:2.84776">Mask token</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text49"
+       x="177.93828"
+       y="217.36847"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="177.93828"
+         y="217.36847"
+         id="tspan47"
+         style="stroke-width:2.84776">Predicted discrete token</tspan><tspan
+         sodipodi:role="line"
+         id="tspan48"
+         x="177.93828"
+         y="224.44406"
+         style="stroke-width:2.84776" /><tspan
+         sodipodi:role="line"
+         id="tspan49"
+         x="177.93828"
+         y="231.43031"
+         style="stroke-width:2.84776" /></text>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text51"
+       x="266.94037"
+       y="200.46498"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan50"
+         x="266.94037"
+         y="200.46498"
+         style="stroke-width:2.84776">Learnable</tspan><tspan
+         sodipodi:role="line"
+         x="266.94037"
+         y="207.54057"
+         style="stroke-width:2.84776"
+         id="tspan51">block</tspan></text>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text53"
+       x="321.40179"
+       y="201.37071"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan52"
+         x="321.40179"
+         y="201.37071"
+         style="stroke-width:2.84776">Non-learnable /</tspan><tspan
+         sodipodi:role="line"
+         x="321.40179"
+         y="208.4463"
+         style="stroke-width:2.84776"
+         id="tspan53">frozen block</tspan></text>
+    <g
+       id="g53"
+       transform="matrix(2.8765986,0,0,2.8765986,49.736608,189.51732)"
+       style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <circle
+         style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-width:0.224604;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+         id="circle53"
+         cx="8.1382542"
+         cy="10.76512"
+         r="1.3661224" />
+    </g>
+    <g
+       id="g54"
+       transform="matrix(2.8765986,0,0,2.8765986,143.28211,177.55568)"
+       style="fill:#b5b5b5;fill-opacity:1;stroke:#666666;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
+       inkscape:transform-center-x="8.9369778"
+       inkscape:transform-center-y="7.8421402"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <circle
+         style="fill:#b5b5b5;fill-opacity:1;stroke:#666666;stroke-width:0.224604;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+         id="circle54"
+         cx="8.1382542"
+         cy="10.76512"
+         r="1.3661224" />
+    </g>
+    <g
+       id="g55"
+       transform="matrix(2.8765986,0,0,2.8765986,37.791898,189.65608)"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <circle
+         style="fill:#dae8fc;fill-opacity:1;stroke:#6c8fbf;stroke-width:0.224604;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:0.862745"
+         id="circle55"
+         cx="8.1382542"
+         cy="10.76512"
+         r="1.3661224" />
+    </g>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:5.58899px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.84776;stroke-linecap:butt;stroke-linejoin:round"
+       id="text57"
+       x="178.18213"
+       y="193.40956"
+       transform="scale(0.9780019,1.0224929)"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="178.18213"
+         y="193.40956"
+         id="tspan55"
+         style="stroke-width:2.84776">Encoded token</tspan><tspan
+         sodipodi:role="line"
+         id="tspan56"
+         x="178.18213"
+         y="200.48515"
+         style="stroke-width:2.84776" /><tspan
+         sodipodi:role="line"
+         id="tspan57"
+         x="178.18213"
+         y="207.47141"
+         style="stroke-width:2.84776" /></text>
+    <g
+       id="g57"
+       transform="matrix(2.8765986,0,0,2.8765986,143.34947,165.48317)"
+       style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-width:0.239071;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.239071, 0.478143;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <circle
+         style="fill:#ffaaaa;fill-opacity:1;stroke:#ff5555;stroke-width:0.239071;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.239071, 0.478143;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle57"
+         cx="8.1382542"
+         cy="10.76512"
+         r="1.3661224" />
+    </g>
+    <g
+       id="g58"
+       transform="matrix(2.8765986,0,0,2.8765986,131.40475,165.62194)"
+       style="stroke-width:0.239071;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.239071, 0.478143;stroke-dashoffset:0"
+       inkscape:export-filename="/data2/Downloads/AnCoGen-icassp (1)/ICASSP 2025/figures/AnCoGen-archi-2.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <circle
+         style="fill:#dae8fc;fill-opacity:1;stroke:#6c8fbf;stroke-width:0.239071;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.239071, 0.478143;stroke-dashoffset:0;stroke-opacity:0.862745"
+         id="circle58"
+         cx="8.1382542"
+         cy="10.76512"
+         r="1.3661224" />
+    </g>
+  </g>
+</svg>
