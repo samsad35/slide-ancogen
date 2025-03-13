@@ -92,6 +92,11 @@ $$ \global\def\xfactorqrec{{\color{blue}\hat{\mathbf{x}}^{(f)}_q}} $$
 
 ]
 
+???
+- Hello everyone, my name is Samir Sadok, and I am currently a postdoctoral researcher at Inria Grenoble.
+- In this presentation, I will introduce our paper titled AnCoGen.
+- This work focuses on [brief mention of the core idea of AnCoGen], and I’m excited to share our findings with you today.
+
 ---
 class: middle, first-slide
 
@@ -147,8 +152,9 @@ class: middle, first-slide
 
 ???
 
-
-- This is joint work with several people: Simon leglaive, Laurent Girin, Gaël Richard, and Xavi Alameda-Pineda.
+- This work was carried out in collaboration with **several researchers** from different laboratories across France.
+- Simon leglaive, Laurent Girin, Gaël Richard, and Xavi Alameda-Pineda.
+- .bold[Their contributions were essential in shaping the outcomes of this research.]
 
 
 
@@ -157,6 +163,11 @@ class: center, middle
 
 # Introduction to AnCoGen
 
+???
+To begin, I will introduce AnCoGen.
+- In this section, I will first discuss **the motivation** behind our work—why this problem matters and what challenges we aim to address.
+- Then, I will give a brief *overview* of AnCoGen and how it contributes to solving these challenges
+
 ---
 ## Introduction (1/2)
 
@@ -164,22 +175,43 @@ Today, the most effective methods for manipulating speech signals are based on .
 
 .grid.center[
 .kol-1-2[
-.center.width-60[![](images/introduction/intro-icassp-1.svg)]
+.center.width-90[![](images/introduction/intro-icassp-1.svg)]
 .caption[**Neural audio codecs:** e.g., Encodec, soundstream]
 
 ]
-
 .kol-1-2[
-.center.width-60[![](images/introduction/intro-icassp-2.svg)]
+.center.width-90[![](images/introduction/intro-icassp-2.svg)]
 .caption[**Polyak model, LPCnet ...**]
 ]
 ]
 
+.small-nvspace[
+
+]
 
 Existing neural encoder-decoder models achieve .bold[high-quality speech reconstruction] but
-- Significantly *lack controllability* for speech signal manipulation;
-- and robustness to *noise* and *reverberation*;
-- and *unidirectional* mapping (from attributes to speech synthesis).
+face some limitations (*controllability, robustness, unidirectional*).
+
+.credit[
+Défossez, A., Copet, J., Synnaeve, G., & Adi, Y. (2022). High fidelity neural audio compression. arXiv preprint arXiv:2210.13438.<br>
+Zeghidour, N., Luebs, A., Omran, A., Skoglund, J., & Tagliasacchi, M. (2021). Soundstream: An end-to-end neural audio codec. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30, 495-507.<br>
+Polyak, A., Adi, Y., Copet, J., Kharitonov, E., Lakhotia, K., Hsu, W. N., ... & Dupoux, E. (2021). Speech resynthesis from discrete disentangled self-supervised representations. arXiv preprint arXiv:2104.00355.
+]
+
+<!--Significantly *lack controllability* for speech signal manipulation and robustness to *noise* and *reverberation*;-->
+<!--and *unidirectional* mapping (from attributes to speech synthesis).-->
+
+???
+The most effective methods for .bold[processing and manipulating] speech signals rely on **deep learning**.
+- Advances in neural audio codecs, such as Encodec and SoundStream, as well as models like Polyak and LPCNet, have significantly improved **speech reconstruction quality**.
+
+- However, despite their success, existing neural encoder-decoder models face three major limitations.
+    - First, they lack fine-grained controllability when modifying speech signals.
+    - Second, they struggle with robustness in noisy and reverberant environments.
+    - Finally, they are often constrained to a unidirectional mapping—from attributes to speech synthesis—without an easy way to analyze or modify the generated speech.
+
+In this presentation, we address these challenges by introducing AnCoGen, a novel approach designed to overcome these limitations.
+
 
 ---
 ## Introduction (2/2)
@@ -187,23 +219,26 @@ Existing neural encoder-decoder models achieve .bold[high-quality speech reconst
 We introduce AnCoGen for .bold[analyzing], .bold[controlling], and .bold[generating] speech signals.
 
 .grid[
-.center.width-60[![](images/introduction/AnCoGen-high-level-2.svg)]
+.center.width-70[![](images/introduction/AnCoGen-high-level-2.svg)]
 .caption[Figure: Analysis, control, and generation of speech with AnCoGen.]
 ]
 
 AnCoGen learns a .bold[bidirectional] mapping between a Mel-spectrogram and the speech attributes,
-    hence leading to a **single/unified model** for the analysis and the resynthesis.
+    hence leading to a **single/unified model** for the analysis and the resynthesis of speech.
 
 
 ???
-- AnCoGen learns a bidirectional mapping between a Mel-spectrogram and the speech attributes, hence leading to a single model for the analysis and the
-resynthesis, as illustrated in Fig. 1.
+To address these challenges, we introduce AnCoGen, a framework designed for analyzing, controlling, and generating speech signals.
 
 - AnCoGen can decompose a speech signal into comprehensive set of speech attributes, representing:
-
 &#9312; **Linguistic content**, &#9313; **prosody** (pitch and
 loudness), 	&#9314; **speaker identity**, and &#9315; the **acoustic recording conditions** in terms of noise and reverberation.
 
+As illustrated in the figure, AnCoGen unifies these three aspects within a single model.
+- A key feature of our approach is that it learns a bidirectional mapping between the Mel-spectrogram and speech attributes.
+- This enables not only high-quality speech synthesis from attributes but also precise analysis and modification of speech, making it a versatile tool for speech manipulation and resynthesis.
+
+By integrating these capabilities into a single model, AnCoGen enhances both the .bold[interpretability and flexibility] of speech processing systems.
 
 ---
 class: middle, center
@@ -212,6 +247,11 @@ class: middle, center
 .small[
 [![image](https://img.icons8.com/?size=60&id=44900&format=png&color=000000)](https://github.com/samsad35/code-ancogen)
 ]
+
+???
+Now, let’s dive deeper into the architecture of AnCoGen and explore the key components that make up our model.
+- I will break down its main building blocks
+- and explain how they work together to achieve efficient speech analysis, control, and generation.
 ---
 ## Speech representations
 AnCoGen utilizes *two speech signal representations*: <br>
@@ -245,6 +285,14 @@ $A\_6$: The **clarity index** at 50 ms (C50; in dB);
 ]
 ]
 
+???
+In AnCoGen, we rely on two **complementary** representations of speech signals to enable both analysis and control.
+
+- The first is the Mel-spectrogram representation, a low-level feature that closely follows the raw signal.
+We compute it using the short-time Fourier transform. The number of Mel bands is set to 128.
+
+- The second is a higher-level attributes representation, denoted as A₁:₆, which is more suitable for controlling and manipulating speech.
+This set of attributes includes:A₁, the linguistic content extracted using the HuBERT model; A₂, the pitch contour estimated with CREPE; A₃, the loudness measured as the root mean square (RMS) of the signal; A₄, the speaker identity; A₅, the signal-to-noise ratio (SNR in dB); and A₆, the clarity index at 50 ms (C50 in dB).
 
 ---
 ## Token representations
@@ -307,14 +355,13 @@ Training AnCoGen is achieved by **randomly masking** the input sequences of mel-
 <br>
 
 .boite-90[
-.bold[“Coupled” masking strategy]
+.bold[“Coupled” masking strategy $^*$]
 
 The masking ratio for these two speech representations is drawn randomly according to a **uniform distribution** on the 1-simplex.
 ]
 ]
 
-.credit[
- After this masking strategy, “all or nothing” masking
+.credit[$^*$After this masking strategy, “all or nothing” masking
 strategy is applied, in which one of the two speech representations
 (MS or SAs) is entirely masked out and the other remains entirely
 visible (i.e., p = 0 or 1)
@@ -324,35 +371,105 @@ visible (i.e., p = 0 or 1)
 .small[
 - if $p \times 100 \%$ of the mel-spectrogram tokens are masked,
 - then $(1 − p) \times 100 \%$ of the speech attributes tokens are masked,
-]
+
 where $p$ is distributed uniformly between 0 and 1.
 
+- Training AnCoGen involves a masking strategy. The input sequences of both Mel-spectrogram and speech attribute tokens are randomly masked during training.
+
+- We use a ‘coupled’ masking strategy, where the masking ratio for the two speech representations is randomly selected from a uniform distribution over the 1-simplex.
+- This means that both Mel-spectrogram and speech attribute tokens are masked to varying degrees in each training step.
+
+- After applying the coupled masking, we use an ‘all or nothing’ strategy, where one of the two speech representations—either the Mel-spectrogram or the speech attributes—is fully masked out, while the other remains completely visible. This ensures that the model learns to rely on both representations in different combinations, further enhancing its flexibility and robustness
+]
 ---
 ## Encoder-decoder architecture
+We use a **masked autoencoder (MAE)** .blue.small[(He et al., 2022)] model to learn a bidirectional mapping between a Mel-spectrogram and the speech
+attributes.
 
 .grid[
 .kol-3-4[
-.center.width-90[![](images/method/encoder-decoder.svg)]
+.center.width-70[![](images/method/encoder-decoder.svg)]
 .caption[Encoder-decoder architecture]
 ]
 .kol-1-4[
-.center.width-80[![](images/method/legend.svg)]
+.center.width-60[![](images/method/legend.svg)]
 .caption[Legend]
 ]
 ]
+.grid[
+.boite-90[
+- The encoder and decoder of AnCoGen each contain **12 multi-head self-attention**.
+- The model (encoder, decoder, codebooks and mask token) is trained by computing the **cross-entropy loss** between the predicted and ground-truth discrete tokens.
+]
+]
 
+.credit[
+He, K. et al., (2022). Masked autoencoders are scalable vision learners. IEEE/CVF conference on computer vision and pattern recognition.<br>
+Alexey Dosovitskiy, et al., 2020. An image is worth 16x16 words: Transformers for image recognition at scale. International Conference on Learning Representations (ICLR).
+]
+
+???
 .boite-90[
 - The encoder and decoder of AnCoGen each contain **12 multi-head self-attention** (MHSA) blocks from the Vision Transformer (ViT) .blue.small[(He et al., 2017)].
 - The model (encoder, decoder, codebooks and mask token) is trained by computing the **cross-entropy loss** between the predicted and ground-truth discrete tokens.
 ]
+
+.small[
+- For learning a bidirectional mapping between the Mel-spectrogram and speech attributes, we adopt a masked autoencoder (MAE) model, inspired by He et al. (2022), which allows us to effectively capture the relationships between these two representations.
+
+The architecture of AnCoGen follows a standard encoder-decoder setup, where both the encoder and decoder consist of 12 layers of multi-head self-attention. This enables the model to capture complex dependencies within the speech signals and attributes.
+
+During training, the encoder-decoder, codebooks, and mask tokens are optimized by minimizing the cross-entropy loss between the predicted and ground-truth discrete tokens, ensuring that the model learns accurate and meaningful representations of both the Mel-spectrogram and speech attributes.
+
+]
+
 ---
 class: middle, center, blue-slide
-    
+
 .caption[Overall architecture of AnCoGen, to read from left (input) to right (output).]
 
 .center.width-100[![](images/method/overall.svg)]
 
 .center.width-80[![](images/method/legend_2.svg)]
+
+???
+- This slide presents the overall architecture of AnCoGen, which you can follow from left to right, starting from the input and moving towards the output.
+
+- On the left side, we begin with both the Mel-spectrogram and the high-level speech attributes. After tokenization and masking, These representations are then passed through the encoder-decoder architecture, where the model learns a bidirectional mapping between the Mel-spectrogram and speech attributes.
+    
+
+---
+class: middle, blue-slide
+## AnCoGen at inference
+
+The masking depends on the task: .boxed[**speech analysis**]
+
+.center.width-80[![](images/analyse.svg)]
+
+For .bold[speech analysis], the speech attributes are not available,
+and they are thus totally masked at the input and estimated by the *Melspectrogram-to-speech attributes* mapping.
+
+---
+class: middle, blue-slide
+## AnCoGen at inference
+
+The masking depends on the task: .boxed[**speech generation**]
+
+.center.width-80[![](images/generation.svg)]
+
+For .bold[speech generation], the speech mel-spectrogram are not available,
+and they are thus totally masked at the input and estimated by the *speech attributes-to-Melspectrogram* mapping.
+
+---
+class: middle, blue-slide
+## AnCoGen at inference
+
+The masking depends on the task: .boxed[**speech control**]
+
+.center.width-80[![](images/analyse-control-generation.svg)]
+
+For .bold[speech control], the pitch attributes are *controlled* between the analysis and generation stages in order to perform the pitch shifting for example.
+
 ---
 class: middle
 
@@ -385,7 +502,7 @@ AnCoGen is trained on synthetic **noisy** and **reverberant** speech data.
 .bar-left-gray[
 *2) For the .bold[analysis-control-resynthesis (speech enhancement)]:*
 .small[
-- .bold[Matched conditions]: AnCoGen are trained and evaluated on the single-speaker version of the **LibriMix dataset**;
+- .bold[Matched conditions]: AnCoGen is trained and evaluated on the single-speaker version of the **LibriMix dataset**;
 - .bold[Mismatched noise conditions]: we also compute the performance on the LibriSpeech + DEMAND dataset.
 ]
 ]
@@ -513,11 +630,12 @@ Using AnCoGen to map a Mel-spectrogram to the corresponding speech attributes *(
 This section presents analysis, transformation, and synthesis results, where the speech attributes are controlled between the analysis and generation stages in order to perform speech denoising (**by increasing the SNR attribute**).
 .grid[
 .center.kol-2-3[
-.small-nvspace[
 
+.left[
+- AnCoGen effectively balances **noise reduction**, **speech quality**, and **intelligibility**.
+
+- However, it ranks last in *speaker identity preservation* (as measured by COS).
 ]
-.center.width-100[![](images/controler/speech_enhanecement.png)]
-.caption[Speech denoising results (best score in each column is in bold, second best score is underlined).]
 ]
 .kol-1-3[
 .boite-figure[
@@ -525,15 +643,16 @@ This section presents analysis, transformation, and synthesis results, where the
 ]
 ]
 ]
-.small-vspace[
+
+.nvspace[
 
 ]
 
-.alert[
-AnCoGen effectively balances **noise reduction**, **speech quality**, and **intelligibility**.
+.center.width-90[![](images/controler/speech_enhanecement.png)]
+.caption[Speech denoising results (best score in each column is in bold, second best score is underlined).]
 
-However, it ranks last in *speaker identity preservation* (as measured by COS).
-]
+
+
 
 ---
 class: middle
@@ -598,6 +717,16 @@ We introduce, .bold[AnCoGen], a self-supervised method based on masked modeling.
 - $\texttt{Generate}$ audio speech from the factors provided in the analysis step;
 - and provides $\texttt{control}$ by manipulating the extracted factors.
 
+.center[
+
+.small[
+
+[![Project page](https://img.icons8.com/?size=60&id=43738&format=png&color=000000)](https://samsad35.github.io/site-ancogen/)
+[![image](https://img.icons8.com/?size=60&id=44900&format=png&color=000000)](https://github.com/samsad35/code-ancogen)
+
+]
+
+]
 
 ---
 class: middle, center, gray-slide
